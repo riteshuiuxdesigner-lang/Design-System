@@ -1,0 +1,16 @@
+{
+  "name": "marketplace-website",
+  "version": "1.0.0",
+  "description": "Nudge: a marketplace for designers, built on the Marketplace Design System",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node serve.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "esbuild": "^0.23.1"
+  },
+  "private": true
+}

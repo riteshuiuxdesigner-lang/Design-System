@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+__pycache__/
+# build output
+out/
+# Hugeicons Pro is a paid library: keep the SVGs local
+design-system-website/design-system/icons/**/*.svg

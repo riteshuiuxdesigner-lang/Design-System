@@ -1,0 +1,12 @@
+import home from './home.jsx';
+import shop from './shop.jsx';
+import asset from './asset.jsx';
+import gigs from './gigs.jsx';
+import gig from './gig.jsx';
+import post from './post.jsx';
+import sell from './sell.jsx';
+import designers from './designers.jsx';
+import designer from './designer.jsx';
+import dashboard from './dashboard.jsx';
+import saved from './saved.jsx';
+export default { home, shop, asset, gigs, gig, post, sell, designers, designer, dashboard, saved };

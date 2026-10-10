@@ -1,0 +1,44 @@
+/* Saved: your board. Clean grid, colorful previews, springy entrances. */
+.saved-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-lg); margin-bottom: var(--space-2xl); }
+.saved-head__copy { display: grid; gap: var(--space-xs); min-width: 0; }
+.saved-title { display: inline-flex; align-items: center; gap: var(--space-sm); margin: 0; font: 800 56px/60px var(--font-display); letter-spacing: -2px; }
+.saved-title__n { display: inline-grid; place-items: center; min-width: 44px; height: 44px; padding: 0 var(--space-sm); border-radius: var(--radius-full); background: var(--pop-pink); color: var(--text-on-pop); font: 800 20px/1 var(--font-display); letter-spacing: 0; transform: rotate(-6deg); }
+.saved-sub { max-width: 56ch; margin: 0; font: 400 18px/28px var(--font-display); color: var(--text-secondary); }
+.saved-head__acts { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+
+.saved-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: var(--space-2xl) var(--space-xl); margin: 0; padding: 0; list-style: none; }
+.saved-item { display: grid; gap: var(--space-sm); align-content: start; min-width: 0; animation: saved-in 460ms cubic-bezier(0.34,1.56,0.64,1) both; animation-delay: calc(var(--i) * 50ms); }
+@keyframes saved-in { from { opacity: 0; transform: translateY(14px) scale(0.97); } }
+.saved-item__bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-xs); min-width: 0; padding-top: var(--space-sm); border-top: 1px solid var(--border-subtle); }
+.saved-item__price { min-width: 0; overflow: hidden; font: 600 14px/20px var(--font-display); color: var(--text-secondary); white-space: nowrap; text-overflow: ellipsis; }
+.saved-item__acts { display: inline-flex; align-items: center; gap: var(--space-3xs); flex: none; }
+
+/* Empty board */
+.saved-empty { display: grid; justify-items: center; gap: var(--space-sm); max-width: 520px; margin: 0 auto; padding: var(--space-3xl) var(--space-lg) var(--space-2xl); text-align: center; }
+.saved-fan { position: relative; width: 300px; max-width: 100%; height: 180px; margin-bottom: var(--space-md); }
+.saved-fan__card { position: absolute; left: 50%; top: 20px; width: 170px; aspect-ratio: 4 / 3; margin-left: -85px; border-radius: var(--radius-xl); object-fit: cover; border: 3px solid var(--bg-surface); box-shadow: var(--elevation-3); transition: transform 480ms cubic-bezier(0.34,1.56,0.64,1); }
+.saved-fan__card--0 { transform: translateX(-62px) rotate(-10deg); }
+.saved-fan__card--1 { transform: translateY(-10px); z-index: 1; }
+.saved-fan__card--2 { transform: translateX(62px) rotate(10deg); }
+.saved-fan:hover .saved-fan__card--0, .saved-empty:focus-within .saved-fan__card--0 { transform: translateX(-90px) translateY(6px) rotate(-16deg); }
+.saved-fan:hover .saved-fan__card--1, .saved-empty:focus-within .saved-fan__card--1 { transform: translateY(-22px) scale(1.04); }
+.saved-fan:hover .saved-fan__card--2, .saved-empty:focus-within .saved-fan__card--2 { transform: translateX(90px) translateY(6px) rotate(16deg); }
+.saved-fan__heart { position: absolute; left: 50%; bottom: 0; z-index: 2; display: grid; place-items: center; width: 56px; height: 56px; margin-left: -28px; border-radius: var(--radius-full); background: var(--pop-pink); color: var(--icon-on-pop); box-shadow: var(--elevation-2); animation: saved-beat 2.4s cubic-bezier(0.34,1.56,0.64,1) infinite; }
+@keyframes saved-beat { 0%, 70%, 100% { transform: scale(1); } 80% { transform: scale(1.18) rotate(-8deg); } 90% { transform: scale(0.96); } }
+.saved-empty__title { margin: 0; font: 800 32px/38px var(--font-display); letter-spacing: -1px; }
+.saved-empty__body { margin: 0 0 var(--space-sm); font: 400 17px/26px var(--font-display); color: var(--text-secondary); }
+
+@media (max-width: 639px) {
+  .saved-title { font-size: 40px; line-height: 44px; letter-spacing: -1.4px; }
+  .saved-sub { font-size: 16px; line-height: 24px; }
+  .saved-head__acts { width: 100%; }
+  .saved-head__acts .mds-btn { flex: 1; }
+  .saved-grid { grid-template-columns: minmax(0, 1fr); }
+  .saved-fan__card { width: 140px; margin-left: -70px; }
+  .saved-fan:hover .saved-fan__card--0 { transform: translateX(-70px) translateY(6px) rotate(-14deg); }
+  .saved-fan:hover .saved-fan__card--2 { transform: translateX(70px) translateY(6px) rotate(14deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .saved-item, .saved-fan__heart { animation: none; }
+  .saved-fan__card { transition: none; }
+}
